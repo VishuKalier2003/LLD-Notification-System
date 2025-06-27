@@ -11,6 +11,9 @@ import logging.logger.domain.enums.Logger;
 import logging.logger.domain.model.DataModel;
 import lombok.Getter;
 
+/**
+A Singleton class that stores the map of Logger enum type with node. Each node contains a final <b>ArrayDeque</b> of Logger and Map of Keys String, and value Logger
+ */
 @Component
 public class Mapper {
     private final Map<Logger, Node> map;
@@ -34,12 +37,19 @@ public class Mapper {
         map.put(Logger.ERROR, new Node());
     }
 
+    /**
+     * Function to add data model to the map
+     @param dm the data model
+     */
     public void addToMap(DataModel dm) {
-        if(map.get(dm.getLogger()).getQ().size() > 3)
+        if(map.get(dm.getLogger()).getM().size() > 3)
             erase(dm);
         update(dm);
     }
 
+    /**
+     * Function to show the map
+     */
     public void show() {
         showMap();
     }
