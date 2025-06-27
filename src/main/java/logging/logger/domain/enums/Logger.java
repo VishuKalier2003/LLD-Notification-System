@@ -9,6 +9,9 @@ import logging.logger.domain.annotate.LogMethod;
 import logging.logger.domain.interfaces.Log;
 import lombok.Getter;
 
+/**
+ * Logger enum which defines the type of Log as <b>INFO</b>, <b>WARN</b> and <b>ERROR</b>, and each has a overriden function of <i>outputLog(String sentence, Date date)</i> to store the message and the date in the enum itself at run time
+ */
 // Marking as Component (Singleton)
 @Component
 @Getter

@@ -17,6 +17,9 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import logging.logger.domain.annotate.Api;
 import logging.logger.utility.Printer;
 
+/**
+ * ApiAspect class that decouples the monitoring and exception handling logic from core business logic defined in Services
+ */
 @Aspect
 @Component
 public class ApiAspect {
@@ -26,6 +29,10 @@ public class ApiAspect {
     @Autowired
     private Printer printer;
     
+    /**
+     * Binds the pointcut to the methods (either services or controllers) that have the annotation as <i>Api</i>
+     * @param api
+     */
     @Pointcut("@annotation(api)")
     public void binding(Api api) {}
 
@@ -43,6 +50,9 @@ public class ApiAspect {
     }
 
     // Only @Around can intercept the return of the business logic via try catch
+    /** 
+     * Encased function with the <b>Around</b> annotation to intercept the aspect logic in between the business logic, handles the Exceptions of the controllers via AOP
+    */
     @Around("binding(api)")
     public Object aroundApi(ProceedingJoinPoint pjp, Api api) throws Throwable {
         try {
