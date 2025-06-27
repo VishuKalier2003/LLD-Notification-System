@@ -1,4 +1,5 @@
-# Logging System LLD Practice Project - System & Low Level Design Review
+# Logging Systm Project Report
+## Low Level and System Design Case Study
 
 **Review Date:** 2025-06-27  
 **Reviewer:** GitHub Copilot
@@ -13,7 +14,7 @@ This report evaluates your Logging System project against key System Design and 
 
 ## Evaluation Table
 
-| Parameter                          | Score (out of 10) | Comments |
+| Parameter                          | Score of 10 | Comments |
 |-------------------------------------|-------------------|----------|
 | Modularity & Separation of Concerns | 9                 | Clear separation of controllers, services, repositories, utilities, and aspects. |
 | Encapsulation & Abstraction         | 8                 | Good encapsulation; some internal details (e.g., Mapper's Node) could be further hidden. |
